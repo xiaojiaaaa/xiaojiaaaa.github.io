@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>任务四：定位和居中问题</title>
+<style type="text/css">
+	*{
+		margin:0px;
+		padding:0px;
+	}
+	.gray{
+		position:absolute;
+		
+		top: 50%;
+		left: 50%;
+		margin-top:-100px;
+		margin-left:-200px;
+		/*-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);/* Firefox */
+		/*-ms-transform: translate(-50%, -50%);/* IE 9 */
+		/*-o-transform: translate(-50%, -50%);/* Opera */
+		/*transform: translate(-50%, -50%);	
+		
+		*/
+		height:200px;
+		width:400px;
+		background-color:#ccc;
+	}
+	.common{/*第一种方法采用四分之一圆的方法*/
+		/*width:0;
+		height:0;
+		border-radius:50px;
+		border-width:50px;
+		border-style:solid;
+		border-color:yellow transparent transparent transparent;)		
+		overflow:hidden;
+		cursor:pointer;*/
+		width:50px;
+		height:50px;
+		background-color:yellow;
+		position:absolute;
+	}
+	.yellow1{		
+		border-bottom-right-radius:50px;
+		top:0px;
+		left:0px;
+		/*第一种扇形画法的定位方法*/
+		/*transform: rotate(135deg);
+		position:absolute;
+		top:-50px;
+		left:-50px;*/
+	}
+	.yellow2{		
+		border-top-left-radius:50px;
+		bottom:0px;
+		right:0px;
+		/*第一种扇形画法的定位方法*/
+		/*transform: rotate(-45deg);
+		position:absolute;
+		right:-50px;
+		bottom:-50px;*/
+	}
+</style>
+</head>
+
+<body>
+	<div class="gray">
+        <div class="common yellow1"></div>
+        <div class="common yellow2"></div>
+    </div>
+</body>
+</html>
