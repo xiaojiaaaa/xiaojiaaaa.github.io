@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>任务七：实现常见的技术产品官网的页面架构及样式布局</title>
+<link href="stylesheet/task7.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="wrap">
+	<div class="head">
+    	<div class="head_left">
+        	<img src="image/task7/head_left.png"/>新世界
+        </div><!--head_left结束-->
+        <div class="head_right">
+        	<ul>
+            	<li><a class="active" href="#adshowing">首页</a></li>
+            	<li><a href="#newactive">最新活动</a></li>
+            	<li><a href="#newworldfirst">项目介绍</a></li>
+            	<li><a href="#volunteer">爱心书架</a></li>
+            	<li><a href="#aboutme">关于我们</a></li>
+            </ul>
+            <img src="image/task7/head_right_load.png"/>
+            <span class="head_right_loadtext">登录</span>
+        </div><!--head_right结束-->
+        <div class="clear"></div>
+    </div><!--head结束-->
+    <div id="adshowing" class="adshowing">
+    	<div class="adshowing_img">
+            <img src="image/task7/adshowing_mask.png"/>
+            <div class="adshowing_text">
+                <div class="text1">Time of new life</div>
+                <div class="text2">新时代，年轻的人们让我们一起<br>  体验新生活，享受新生活</div>
+                <div class="text3">开始体验</div>
+            </div>
+        </div>
+        <div class="adshowing_list">
+        	<ul>
+            	<li><img src="image/task7/adshowing_list1.png"/>
+                    <ul>
+                    	<li>打造全新世界观，让你更爱你的生活</li>
+                    </ul>
+                </li>
+                <li><img src="image/task7/adshowing_list2.png"/>
+                    <ul>
+                    	<li>丰富多彩的公益活动，发挥新世界的主人公意识</li>
+                    </ul>
+                </li>
+                <li><img src="image/task7/adshowing_list3.png"/>
+                    <ul>
+                    	<li>时尚的新理念，超前体验未知的生活</li>
+                    </ul>
+                </li>
+                <li><img src="image/task7/adshowing_list4.png"/>
+                    <ul class="lastli">
+                    	<li>完善的培养机制，培养你全新的世界观</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!--adshowing结束-->
+    <div id="newworldfirst" class="newworldfirst">
+    	<img src="image/task7/newworldfisrt_logo.png"/>
+        <div class="newworldfirst_text">关于新世界，你不知道的还有什么？</div>
+    </div><!--newworldfirst结束-->
+    <div class="searchnewworld">
+    	<img class="imgmask" src="image/task7/searchworld_mask.png" />
+        <div class="searchworld_text">
+            <div class="searchworld_text1">查找新世界城市活动信息</div>
+            <img src="image/task7/searchworld_line.png" />
+            <div class="searchworld_text2">每个城市的有不同的活动信息，请自主查询您所需要了解的城市</div>
+            <div class="searchworld_list">
+                <ul>
+                    <li><!--<label id="selectNation">                   		
+                        <select class="selectPointOfNation">                        
+                            <option>中国</option>
+                        </select>
+                        <img class="img1" src="image/task7/selectnation_foldbox.png"/>
+                    	<img class="img2" src="image/task7/selectnation_foldlogo.png"/>
+                        </label>-->
+                        <div id="selectNation">
+                        	<input type="text" class="selectPointOfNation" placeholder="中国">
+                        	<ul class="selectPointOfNation">
+                          <!--  	<li>中国</li>-->
+                            </ul>
+                            <img class="img1" src="image/task7/selectnation_foldbox.png"/>
+                    		<img class="img2" src="image/task7/selectnation_foldlogo.png"/>
+                        </div>
+                    </li>
+                    <li><!--<label id="selectProvince" >                    	 
+                        <select title="省份" class="selectPointOfProvince" >
+                            <option>北京市</option>
+                            <option>天津市</option>
+                            <option>河北省</option>
+                            <option>山西省</option>
+                            <option>内蒙古自治区</option>
+                            <option>辽宁省</option>
+                        </select>
+                        <input  id="selectProvince" placeholder="省份">
+                        <img class="img1" src="image/task7/selectnation_foldbox.png"/>
+                    	<img class="img2" src="image/task7/selectnation_foldlogo.png"/>
+                        </label>-->
+                         <div id="selectProvince">
+                        	<input type="text" class="selectPointOfProvince" placeholder="省份">
+                        	<ul class="selectPointOfProvince">
+                            	<li class="selected"><p>北京市</p><img src="image/task7/select_selectedtrue.png"/></li>
+                                <li>天津市</li>
+                                <li>河北省</li>
+                                <li>河北省</li>
+                                <li>山西省</li>
+                                <li>内蒙古自治区</li>
+                                <li>辽宁省</li>
+                            </ul>
+                            <img class="img1" src="image/task7/selectnation_foldbox.png"/>
+                    		<img class="img2" src="image/task7/selectnation_foldlogo.png"/>
+                        </div>
+                    </li>
+                    <li><!--<label id="selectCountry">  
+                        <select title="城市"  class="selectPointOfCountry">
+                        	<option>城市</option>                         
+                        </select>
+                        <img class="img1" src="image/task7/selectnation_foldbox.png"/>
+                    	<img class="img2" src="image/task7/selectnation_foldlogo.png"/>
+                        </label>-->
+                         <div id="selectCountry">
+                        	<input type="text" class="selectPointOfCountry" placeholder="城市">
+                        	<ul class="selectPointOfCountry">
+                            	
+                            </ul>
+                            <img class="img1" src="image/task7/selectnation_foldbox.png"/>
+                    		<img class="img2" src="image/task7/selectnation_foldlogo.png"/>
+                        </div>
+                    </li>
+                </ul>
+                <input type="button" value="搜      索" class="searchworld_btn"/>
+            </div>
+        </div>
+    </div><!--searchnewworld结束-->
+    <div class="newactive">
+    	<div class="newactive_ad1">
+        	<div class="ad1_mask"><img src="image/task7/ad1_img.png"/></div>
+            <div class="ad1_text">
+            	<p>北京活动</p><p class="ad1_subtitle">新社区大联盟</p>
+            </div>
+        </div>
+        <div class="newactive_ad2">
+        	<div class="ad2_text">
+            	<p>上&nbsp;&nbsp;海&nbsp;&nbsp;活&nbsp;&nbsp;动</p><p class="ad2_subtitle">夜上海新景观探索</p>
+            </div>
+        	<div class="ad2_mask"><img src="image/task7/ad2_img.png"/></div>
+            
+        </div>
+        <div class="newactive_ad3">        	
+        	<div class="ad3_mask"><img src="image/task7/ad3_img.png"/></div>
+            <div class="ad3_text">
+            	<p>深圳活动</p><p class="ad3_subtitle">全新海岸线观点站</p>
+            </div>
+        </div>
+        <div class="newactive_ad4">        	
+        	<div class="ad4_mask"><img src="image/task7/ad4_img.png"/></div>
+            <div class="ad4_text">
+            	<p>香港活动</p><p class="ad4_subtitle">奢侈消费大派送</p>
+            </div>
+        </div>
+    </div><!--newactive结束-->
+    <div class="timenewworld">
+    	<div class="timenewworld_left">
+        	<div class="timenewworld_left_text">
+                <p class="timeworld_text1">新世界</p>
+                <p class="timeworld_text2">TIME</p>
+                <P class="timeworld_text3">@新世界-北京</P>
+                <p class="timeworld_text3">2016.04.01</p>
+            </div>
+            <img src="image/task7/timenewworld_leftlittleimg.png" />
+        </div>
+        <div class="timenewworld_right">
+        	<img src="image/task7/timenewworld_righttitle.png"/>
+            <div class="timenewworld_righttext">
+            	新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界
+            </div>
+            <div class="timenewworld_morea">
+            	<a href="#">更多详情</a>
+            </div>
+            <div class="timenewworld_right_list">
+                <ul>
+                    <li><img src="image/task7/timenewworld_point1.png"/></li>
+                    <li><img src="image/task7/timenewworld_point2.png"/></li>
+                    <li><img src="image/task7/timenewworld_point3.png"/></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div><!--timenewworld结束-->
+    <div class="newtimeshow">
+    	<div class="newtimeshow_list1">
+        	<div class="newtime1_content">
+            	<p>新时代<br>关于爱生活的我们</p>
+                <img src="image/task7/newtimelist1_line.png"/>
+                <div class="newtimelist1_morea">
+                    <a href="#">查看更多</a>
+                </div>
+            </div>
+        </div>
+    	<div class="newtimeshow_list3">
+        	<img class="newtimelist3_img1" src="image/task7/newtimelist3_mask.png"/>
+            <img class="newtimelist3_img2" src="image/task7/newtimelist3_littlelogo.png"/>
+        </div>
+    	<div class="newtimeshow_list2">
+        	<div class="newtime2_content">
+            	<p>新时代<br>关于爱生活的我们</p>
+                <img src="image/task7/newtimelist2_line.png"/>
+                <div class="newtimelist2_morea">
+                    <a href="#">查看更多</a>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div><!--newtimeshow结束-->
+    <div class="volunteer">
+    	<div class="volunteer_summary">
+            <p>成为我们的志愿者</p>
+            <img src="image/task7/volunteer_line.png"/>
+            <div class="volunteer_detail">
+                新世界的大家庭需要每一个爱生活的人的加入，如果你够年轻，有梦想，有激情<br>那就不要犹豫，快来加入我们，成为改变所有人生活的人 
+            </div>
+        </div><!--volunteer_summary结束-->
+        <div class="volunteer_content">
+            <div class="volunteer_right">
+            	<table>
+                	<tr>
+                    	<td class="td1">姓名：<input type="text" name="姓名" /></td>
+                        <td class="td2">年龄：<input type="text" name="年龄" /></td>
+                    </tr>
+                    <tr>
+                    	<td class="td3">联系方式：<input type="text" name="联系方式" /></td>
+                        <td class="td4">联系地址：<input type="text" name="联系地址" /></td>
+                    </tr>
+                    <tr rowspan="3">
+                    	<td colspan="2" class="td5">请简单描述您梦想的生活：<input type="text" name="请简单描述您梦想的生活" />  </td>
+                    </tr>
+                    <tr>
+                    	<td colspan="2" class="td6"><a href="#">提交申请</a></td>
+                    </tr>
+                </table>            
+            </div><!--volunteer_right结束-->
+            <div class="volunteer_left">
+                <div class="volunteerleft_article1">
+                    <h3>新世界志愿者协议</h3>
+                    <p>加入新世界志愿者的人员必须遵守中华人民共共和国的 相关法律法规，并且本着平等资源的原则 ......</p>
+                    <a href="#"><img src="image/task7/volunteer_left_more1.png"/>more</a>
+                </div>
+                <div class="volunteerleft_article1">
+                    <h3>新世界志愿者权利</h3>
+                    <p>新世界志愿者享受新世界内部所有资源共享的权利，并且享受所在四新世界活动的优先参与资格</p>
+                    <a href="#"><img src="image/task7/volunteer_left_more1.png"/>more</a>
+                </div>
+                <div class="volunteerleft_article1">
+                    <h3>更多条款</h3>
+                    <a href="#"><img src="image/task7/volunteer_left_more1.png"/>more</a>
+                </div>
+            </div><!--volunteer_left结束-->
+        </div><!--volunteer_content结束-->
+    </div><!--volunteer结束-->
+    <div class="aboutme">
+    	<div class="aboutme_top">
+        	<div class="aboutme_content">
+            	<p class="linkme">联系我们</p>
+                <p>为了更好的获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯<br>也可以通过以下任何方式关注我们动态</p>
+                <div class="address">
+                	<input class="text" type="text" placeholder="someone@email.com"/>
+                    <input  class="btn" type="button" value="提 交"/>
+                </div>
+                <div class="logoico">
+                	<ul>
+                    	<li><img src="image/task7/aboutme_qqlogo.png" /></li>
+                    	<li><img src="image/task7/aboutme_sinelogo.png"/></li>
+                    	<li><img src="image/task7/aboutme_tuiterlogo.png"/></li>
+                    	<li><img src="image/task7/aboutme_scanlogo.png"/></li>
+                    </ul>
+                </div>
+           	</div>
+        </div><!--aboutme_top结束-->
+        <div class="aboutme_bottom">
+        	<p class="aboutmebottom_left">@2016新世界</p>
+            <p class="aboutmebottom_right">Back to top</p>
+            <div class="clear"></div>
+        </div><!--aboutme_bottom结束-->
+    </div><!--aboutme结束-->
+</div><!--wrap结束-->
+
+</body>
+</html>
