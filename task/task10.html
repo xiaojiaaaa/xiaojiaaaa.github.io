@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>任务十：Flex布局练习</title>
+<style type="text/css">
+	*{
+		margin:0px;
+		padding:0px;
+	}
+	@media (min-width:640px){
+	.flex_container{
+		display:flex;
+		flex-flow: row wrap-reverse;
+		/*align-content:space-around ;*/
+		justify-content:space-between;
+		/*align-items: flex-start*/
+		height:100%;
+		padding:20px;
+	}
+	.div1{
+		height:120px;
+		width:150px;
+		border:1px solid #f00;
+		margin:auto;
+	}
+	.div2{
+		height:100px;
+		width:150px;
+		border:1px solid #f00;
+		/*order:3;*/
+		margin:auto;
+	}
+	.div3{
+		height:40px;
+		width:150px;
+		border:1px solid #f00;
+		margin:auto;
+	}
+	.div4{
+		height:200px;
+		width:150px;
+		border:1px solid #0000FF;
+	/*	order:1;*/
+		margin:auto;
+	}
+	}
+	@media (max-width:640px){
+	.flex_container{
+		display:flex;
+		flex-flow: row wrap;
+		/*align-content:space-around ;*/
+		justify-content:space-between;
+		/*align-items: flex-start*/
+		height:100%;
+		padding:20px;
+	}
+	.div1{
+		height:120px;
+		width:150px;
+		border:1px solid #f00;
+		margin-bottom:20px;
+		order:1;
+	}
+	.div2{
+		height:100px;
+		width:150px;
+		border:1px solid #f00;
+		margin-bottom:20px;
+		order:1;
+	}
+	.div3{
+		height:40px;
+		width:150px;
+		border:1px solid #f00;
+		margin-bottom:20px;
+		order:1;
+	}
+	.div4{
+		height:200px;
+		width:150px;
+		border:1px solid #0000FF;
+		margin-bottom:20px;
+		
+	/*	order:1;*/
+	}
+	}
+</style>
+</head>
+
+<body>
+<div class="flex_container">
+	<div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+</div><!--flex_container结束-->
+</body>
+</html>
