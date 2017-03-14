@@ -1,0 +1,496 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>任务九：使用HTML/CSS实现一个复杂页面</title>
+<link href="stylesheet/task9.css" rel="stylesheet" type="text/css"/>
+<!--bootstrap样式-->
+<link href="stylesheet/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+<!--iconcss-->
+<link href="stylesheet/iconcode-task9/iconfont.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div class="wrap">
+	<div class="top col-xs-12">
+		<div class="col-xs-1 text-center">
+			<img src="image/task9/top_logo.png"/>
+		</div>
+		<div class="col-xs-4 col-xs-offset-7">
+        	<div class="top_search col-xs-8">
+            	<i class="iconfont icon-sousuo_sousuo"></i>
+                <input type="text" />
+            </div>
+        	<div class="top_right col-xs-4">
+            	<i class="iconfont icon-denglu"></i><a href="#">登录</a>
+            </div>
+		</div>
+	</div><!--top结束-->
+	<div class="left">
+    	<div class="col-xs-12 row">
+        	<div class="col-xs-offset-2 col-xs-4 left_logoimg">
+            	<img src="image/task9/left_discimg.png"/>
+            </div>
+        	<div class="col-xs-6 left_title">ABC123</div>
+        </div>
+        <div class="col-xs-12 row left_statistics">
+        	<div class="col-xs-offset-1 col-xs-4 text-center">
+            	<span style="font-size:16px;">110</span><br>收藏
+            </div>
+            <div class="col-xs-1 text-center">
+            	<img src="image/task9/left_line.png"/>
+            </div>
+			<div class="col-xs-4 text-center">
+            	<span style="font-size:16px;">313</span><br>粉丝
+            </div>                        
+        </div>
+        <div class="left_list row col-xs-12" style="padding-right:0px;">        
+        	<!--<ul>
+            	<li class="activelibg"><span class="activeli"><i class="iconfont icon-wenjianjia"></i>&nbsp;个人报表</span>
+                	<ul>
+                    	<li><i class="iconfont icon-jiantouxiao col-xs-offset-1"></i>  <i class="iconfont icon-wenjian"></i> 文件一</li>
+                        <li><span class="activeli"><i class="iconfont icon-right-arrow col-xs-offset-1"></i>  <i class="iconfont icon-wenjian"></i> 文件二</span>
+                        	<ul>
+                            	<li class="activeli"><i class="iconfont icon-wenjian1 col-xs-offset-3"></i> 文档1</li>
+                            	<li><i class="iconfont icon-wenjian1 col-xs-offset-3"></i> 文档1</li>
+                            </ul>
+                        </li>
+                        <li><i class="iconfont icon-jiantouxiao col-xs-offset-1"></i>  <i class="iconfont icon-wenjian"></i> 文件三</li>
+                    </ul>
+                </li>
+            </ul>-->
+            <div class="activelibg row">
+                <div class="col-xs-offset-2 col-xs-10 ">
+                    <div class="list1"><span class="activeli"><i class="iconfont icon-wenjianjia"></i>&nbsp;个人报表</span>                	
+                        <div><i class="iconfont icon-jiantouxiao col-xs-offset-1"></i>  <i class="iconfont icon-wenjian"></i> 文件一</div>
+                        <div><span class="activeli"><i class="iconfont icon-right-arrow col-xs-offset-1"></i>  <i class="iconfont icon-wenjian"></i> 文件二</span>                    
+                            <div class="activeli"><i class="iconfont icon-wenjian1 col-xs-offset-3"></i> 文档1</div>
+                            <div><i class="iconfont icon-wenjian1 col-xs-offset-3"></i> 文档1</div>                   
+                        </div>
+                        <div><i class="iconfont icon-jiantouxiao col-xs-offset-1"></i>  <i class="iconfont icon-wenjian"></i> 文件三</div>                               	
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-offset-2 col-xs-10 ">
+                    <div class="list2"><span><i class="iconfont icon-shoucang"></i>&nbsp;个人收藏</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-offset-2 col-xs-10 ">
+                    <div class="list2"><span><i class="iconfont icon-iconcardshare"></i>&nbsp;我的分享</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-offset-2 col-xs-10 ">
+                    <div class="list2"><span><i class="iconfont icon-ku"></i>&nbsp;图库</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-offset-2 col-xs-10 ">
+                    <div class="list2"><span><i class="iconfont icon-czjl"></i>&nbsp;成长记录</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-offset-2 col-xs-10 ">
+                    <div class="list2"><span><i class="iconfont icon-3"></i>&nbsp;账户信息</span></div>
+                </div>
+            </div>       
+        </div>
+    </div><!--left结束-->
+	<div class="right">
+    	<div class="model1">
+        	C站  / 个人报表 / 文件一／<span style="color:#6898c2">文档一</span>
+        </div><!--model1结束-->
+        <div class="right_nav">
+        	<div class="model2">
+            	<div class="model2_mask">
+                    <div class="row col-xs-12">
+                        <div class="col-xs-4">
+                            <div class="borderdiv row">
+                                <div class="col-xs-3 text-right">查询项</div>
+                                <!--<div class="col-xs-4  borderdiv1">第一项<i class="iconfont icon-right-arrow"></i></div>-->
+                                <div class="col-xs-3">
+                                    <select class="selected1">
+                                        <option>第一项</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-3 text-right">买方</div>
+                               <!-- <div class="col-xs-3 borderdiv1">小A <span class="text-right"><i class="iconfont icon-right-arrow"></i></span></div>-->
+                               <div class="col-xs-3">
+                                   <select class="selected2">
+                                        <option>小A</option>
+                                   </select>
+                               </div>
+                            </div>
+                            <div class="borderdiv row" style="margin-top:5px;">
+                                <div class="col-xs-offset-6 col-xs-3 text-right">卖方</div>
+                                <!--<div class="col-xs-3 borderdiv1">小C <i class="iconfont icon-right-arrow"></i></div>-->
+                                <div class="col-xs-3">
+                                   <select class="selected2">
+                                        <option>小C</option>
+                                   </select>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-1 model2_img">
+                            <!--<img src="image/task9/model2_img.png"/>--><span class="model2_text">换</span>
+                        </div>
+                        <div class="col-xs-5">
+                             <div class="borderdiv row">
+                                <div class="col-xs-2 text-right">日期</div>
+                                <div class="col-xs-5 borderdiv1">2016-04-01</div>
+                                <div class="col-xs-3 text-right">总耗时</div>
+                                <!--<div class="col-xs-3 borderdiv1">8天 <i class="iconfont icon-right-arrow"></i></div>-->
+                                <div class="col-xs-2">
+                                   <select class="selected3">
+                                        <option>8天</option>
+                                   </select>
+                               </div>
+                            </div>
+                            <div class="borderdiv row" style="margin-top:10px;">
+                                <div class="col-xs-2 text-right">人数</div>
+                                <!--<div class="col-xs-3 borderdiv1">10人 <i class="iconfont icon-right-arrow"></i></div>-->
+                                <div class="col-xs-2">
+                                   <select class="selected3">
+                                        <option>10人</option>
+                                   </select>
+                                </div>
+                                <div class="col-xs-3 text-right">成交项</div>
+                               <!-- <div class="col-xs-4 borderdiv1">10项 <i class="iconfont icon-right-arrow"></i></div>-->
+                               <div class="col-xs-5">
+                                   <select class="selected4">
+                                        <option>10项</option>
+                                   </select>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-1">
+                            <input class="model2_btn" type="button" value="搜索"/>
+                        </div>
+                    </div>
+                </div><!--model2_mask结束-->
+            </div><!--model2结束-->
+            <div class="model3">
+            	<div class="model3_list">
+                	<ul>
+                    	<li class="littleli"><i class="iconfont icon-icon"></i></li>
+                        <li class="activeli">10:00 am<br><i class="iconfont icon-qian-copy"></i><span class="litext_green">1200</span></li>
+                        <li>11:00 am<br><i class="iconfont icon-qian-copy"></i><span class="litext_yellow">1300</span></li>
+                        <li>12:00 am<br><i class="iconfont icon-qian-copy"></i><span class="litext_yellow">1200</span></li>
+                        <li>01:00 pm<br><i class="iconfont icon-qian-copy"></i><span class="litext_yellow">1400</span></li>
+                        <li>02:00 pm<br><i class="iconfont icon-qian-copy"></i><span class="litext_yellow">1500</span></li>
+                        <li>03:00 pm<br><i class="iconfont icon-qian-copy"></i><span class="litext_yellow">1800</span></li>
+                    	<li class="littleli"><i class="iconfont icon-jiantouxiao"></i></li>
+                    </ul>
+                    <div class="rililist">
+                    	<i class="iconfont icon-rili"></i>历史查询
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div><!--model3结束-->
+            <div class="model4">
+            	<div class="model4_title">2016年4月份统计</div>
+                <div class="model4_list">
+                    <div class="model4list_wrap row col-xs-12" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;">
+                        <div class="col-xs-3" style="padding-left:0px;padding-right:0px;">
+                            <div class="model4_statistic">
+                           		<p class="model4_img1"></p>
+                                <p class="model4info">133311<br><span class="model4_text">成交量</span></p>                         
+                            </div>
+                        </div>
+                       <div class="col-xs-3" style="padding-left:0px;padding-right:0px;">
+                            <div class="model4_statistic2">
+                                <p class="model4_img2"></p>
+                                <p class="model4info">133311<br><span class="model4_text">成交量</span></p>    
+                            </div>
+                        </div>
+                         <div class="col-xs-3" style="padding-left:0px;padding-right:0px;">
+                            <div class="model4_statistic3">
+                                <p class="model4_img3"></p>
+                                <p class="model4info">133311<br><span class="model4_text">成交量</span></p>    
+                            </div>
+                        </div>
+                         <div class="col-xs-3" style="padding-left:0px;padding-right:0px;">
+                            <div class="model4_statistic4">
+                                <p class="model4_img4"></p>
+                                <p class="model4info">133311<br><span class="model4_text">成交量</span></p>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--model4结束-->
+            <div class="row">
+                <div class="col-xs-7">
+                   <div class="model5"> 
+                   		<div class="model5_title">第一组项目</div>
+                        <div class="model5_list">
+                        	<!--<div class="menu">-->
+                               <!-- <ul>
+                                    <li class="activepro"><a href="#faq-tab-1">项目一</a></li>
+                                    <li><a href="#faq-tab-2">项目一</a></li>
+                                    <li><a href="#faq-tab-3">项目一</a></li>
+                                    <li><a href="#faq-tab-4">项目一</a></li>
+                                    <li><a href="#faq-tab-5">项目一</a></li>
+                                </ul>-->
+                                <input id="tab1" type="radio" name="tabs" checked>
+                                <label for="tab1" style="margin-bottom: 0px;">项目一</label>
+                                <input id="tab2" type="radio" name="tabs">
+                                <label for="tab2" style="margin-bottom: 0px;">项目一</label>
+                                <input id="tab3" type="radio" name="tabs">
+                                <label for="tab3" style="margin-bottom: 0px;">项目一</label>
+                                <input id="tab4" type="radio" name="tabs">
+                                <label for="tab4" style="margin-bottom: 0px;">项目一</label>
+								<input id="tab5" type="radio" name="tabs">
+                                <label for="tab5" style="margin-bottom: 0px;">项目一</label>
+                            <!--</div>-->
+                            <div class="clear"></div>
+                            <div class="tab_content" id="faq-tab-1" >
+                                <table>
+                                    <tr>
+                                        <td style="background-color:#f4f6f7;">购买材料一</td>
+                                        <td>购买材料一</td>
+                                        <td>购买材料一</td>
+                                        <td>购买材料一</td>   
+                                    </tr>
+                                    <tr>
+                                        <td>购买材料二</td>
+                                        <td>购买材料二</td>
+                                        <td>购买材料二</td>
+                                        <td>购买材料二</td>   
+                                    </tr>
+                                    <tr>
+                                        <td>购买材料四</td>
+                                        <td>购买材料四</td>
+                                        <td>购买材料四</td>
+                                        <td>购买材料四</td>   
+                                    </tr>
+                                    <tr>
+                                        <td>购买材料六</td>
+                                        <td>购买材料六</td>
+                                        <td>购买材料六</td>
+                                        <td>购买材料六</td>   
+                                    </tr>
+                                    <tr>
+                                        <td>购买材料十三</td>
+                                        <td>购买材料十三</td>
+                                        <td>购买材料十三</td>
+                                        <td>购买材料十三</td>   
+                                    </tr>
+                                    <tr>
+                                        <td>购买材料二十</td>
+                                        <td>购买材料二十</td>
+                                        <td>购买材料二十</td>
+                                        <td>购买材料二十</td>   
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab_content" id="faq-tab-2">
+                                <h1>选项卡二</h1>
+                            </div>
+                            <div class="tab_content" id="faq-tab-3">
+                                <h1>选项卡三</h1>
+                            </div>
+                            <div class="tab_content" id="faq-tab-4">
+                                <h1>选项卡四</h1>
+                            </div>
+                            <div class="tab_content" id="faq-tab-5">
+                                <h1>选项卡五</h1>
+                            </div>
+                        </div>
+                    </div>               
+                </div><!--model5结束-->
+                <div class="col-xs-5">
+                	<div class="model6">
+                    	<div class="model6_title">第一组项目</div>
+                        <div class="model6_content">
+                        	<div class="row col-xs-12">
+                        		<div class="col-xs-offset-1 col-xs-3 model6_textgray">标题</div>
+                            </div>
+                            <div class="row col-xs-12 ">
+                        		<div class="col-xs-offset-1 col-xs-4">项目报表三</div>
+                            </div>
+                            <div class="row col-xs-offset-1 col-xs-10 model6_textnum">
+                            	<div class="row model6_textgray">
+                        			<div class="col-xs-4 model6_border">价格</div>
+                                    <div class="col-xs-8">负责人</div>
+                                </div>
+                                <div class="row">
+                        			<div class="col-xs-4  model6_border"><i class="iconfont icon-qian-copy"></i>158</div>
+                                    <div class="col-xs-8">小A</div>
+                                </div>
+                            </div>
+                            <div class="row col-xs-12">
+                        		<div class="col-xs-offset-1 col-xs-11 model6_textgray">详细描述</div>
+                            </div>
+                            <div class="row col-xs-12">
+                        		<div class="col-xs-offset-1 col-xs-11 model6_detail">该项目目前负责人是......</div>
+                            </div>
+                            <div class="row col-xs-12">
+                            	<div class="col-xs-offset-1 col-xs-9 model6_textgray">
+                                	<input type="checkbox"  checked>&nbsp;&nbsp;<span class=" textcheck">遵守保密协议</span>
+                                </div>
+                                <div class="col-xs-2 model6_searchbtn">
+                                	<input type="button" value="搜 索"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--model6结束-->
+            </div>
+            <div class="row">
+                <div class="col-xs-5">
+                    <div class="model7">
+                    	<div class="model7_title">日历</div>
+                        <div class="model7_select">
+                        	<div class="row col-xs-12" style="padding-left:0px;padding-right:0px;">
+                            	<div class="col-xs-3">
+                                	<select class="selectYear">
+                                    	<option>2016年</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-3">
+                                	<select class="selectMonth">
+                                    	<option>4月</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-3">
+                                	<select class="selectDay">
+                                    	<option>标注日期</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-3">
+                                	<input class="selectNow" type="button" value="返回今天"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="model7_rilicontent">
+                        	<table>
+                            	<tr class="weekrow">
+                                	<th>一</th>
+                                    <th>二</th>
+                                    <th>三</th>
+                                    <th>四</th>
+                                    <th>五</th>
+                                    <th>六</th>
+                                    <th>日</th>
+                                </tr>
+                                <tr>
+                                	<td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>1<br><span class="weekfree">愚人节</span></td>
+                                    <td><span class="weekfree">2</span><br>廿五</td>
+                                    <td><span class="weekfree">3</span><br>廿六</td>
+                                </tr>
+                                <tr>
+                                	<td>4<br>廿七</td>
+                                    <td>5<br><span class="weekfree">清明</span></td>
+                                    <td>6<br>廿九</td>
+                                    <td>7<br>三月</td>
+                                    <td>8<br>初二</td>
+                                    <td><div class="specialDay"><span class="weekfree">9</span><br>初三</div></td>
+                                    <td><span class="weekfree">10</span><br>初四</td>
+                                </tr>
+                                <tr>
+                                	<td>11<br>初五</td>
+                                    <td><div class="specialDay">12<br>初六</div></td>
+                                    <td>13<br>初七</td>
+                                    <td>14<br>初八</td>
+                                    <td>15<br>初九</td>
+                                    <td><span class="weekfree">16</span><br>初十</td>
+                                    <td><span class="weekfree">17</span><br>十一</td>
+                                </tr>
+                                <tr>
+                                	<td>18<br>十二</td>
+                                    <td><div class="specialDay">19<br>十三</div></td>
+                                    <td>20<br>十四</td>
+                                    <td>21<br>十五</td>
+                                    <td>22<br>十六</td>
+                                    <td><span class="weekfree">23</span><br>十七</td>
+                                    <td><span class="weekfree">24</span><br>十八</td>
+                                </tr>
+                                <tr>
+                                	<td>25<br>十九</td>
+                                    <td>26<br>廿十</td>
+                                    <td>27<br>廿一</td>
+                                    <td>28<br>廿二</td>
+                                    <td>29<br>廿三</td>
+                                    <td><span class="weekfree">30</span><br>廿四</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div><!--model7结束-->
+                </div>
+                <div class="col-xs-7">
+                	<div class="model8">
+                    	<div class="model8_title">汽车行业品牌榜</div>
+                        <div class="model8_tablecontent">
+                        	<table>
+                            	<tr>
+                                	<th width="15%">排名</th>
+                                    <th width="19%">品牌</th>
+                                    <th width="66%" class="specialtd">搜索指数</th>
+                                </tr>
+                                <tr>
+                                	<td>1</td>
+                                    <td>大众</td>
+                                    <td  class="specialtd">48912001<span class="bar1"><img src="image/task9/bar1.png"></span></td>
+                                </tr>
+                                <tr>
+                                	<td>2</td>
+                                    <td>丰田</td>
+                                    <td class="specialtd">29307333<span class="bar2"><img src="image/task9/bar2.png"></span></td>
+                                </tr>
+                                <tr>
+                                	<td>3</td>
+                                    <td>奥迪</td>
+                                    <td class="specialtd">23139070<span class="bar3"><img src="image/task9/bar3.png"></span></td>
+                                </tr>
+                                 <tr>
+                                	<td>4</td>
+                                    <td>本田</td>
+                                    <td class="specialtd">22885564<span class="bar4"><img src="image/task9/bar4.png"></span></td>
+                                </tr>
+                                <tr>
+                                	<td>5</td>
+                                    <td>福特</td>
+                                    <td class="specialtd">22324792<span class="bar5"><img src="image/task9/bar5.png"></span></td>
+                                </tr>
+                                <tr>
+                                	<td>6</td>
+                                    <td>宝马</td>
+                                    <td class="specialtd">21444077<span class="bar6"><img src="image/task9/bar6.png"></span></td>
+                                </tr> 
+                                <tr>
+                                	<td>7</td>
+                                    <td>现代</td>
+                                    <td class="specialtd">20114969<span class="bar7"><img src="image/task9/bar7.png"></span></td>
+                                </tr>
+                                <tr>
+                                	<td>8</td>
+                                    <td>起亚</td>
+                                    <td class="specialtd">19251680<span class="bar8"><img src="image/task9/bar8.png"></span></td>
+                                </tr>
+                                <tr>
+                                	<td>9</td>
+                                    <td>奔驰</td>
+                                    <td class="specialtd">19172837<span class="bar9"><img src="image/task9/bar9.png"></span></td>
+                                </tr>
+                                <tr>
+                                	<td>10</td>
+                                    <td>别克</td>
+                                    <td class="specialtd">18544027<span class="bar10"><img src="image/task9/bar10.png"></span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div><!--model8结束-->
+                </div>
+            </div>
+        </div><!--right_nav结束-->
+    </div><!--right结束-->
+    <div class="clear"></div>
+</div><!--wrap结束-->
+</body>
+</html>
