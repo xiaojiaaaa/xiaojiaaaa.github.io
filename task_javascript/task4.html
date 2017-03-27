@@ -33,8 +33,12 @@ var showNumList=document.getElementById("showlist_num");
  */
 function pushLeftHandler(){
 	if(inputNum.value==""){
-		inputNum.focus();
+		// inputNum.focus();
 		alert("请输入值");
+	}
+	else if(isNaN(inputNum.value)){
+		
+		alert("请输入数字");	
 	}
 	else{
 		var result = showNumList.innerHTML;
@@ -42,7 +46,7 @@ function pushLeftHandler(){
 		showNumList.innerHTML=result1+result;
 		inputNum.value="";
 	}
-
+	inputNum.focus();
 }
 
 /**
@@ -51,8 +55,12 @@ function pushLeftHandler(){
  */
 function pushRightHandler(){
 	if(inputNum.value==""){
-		inputNum.focus();
+		
 		alert("请输入值");
+	}
+	else if(isNaN(inputNum.value)){
+		
+		alert("请输入数字");	
 	}
 	else{
 		var result = showNumList.innerHTML;
@@ -60,6 +68,7 @@ function pushRightHandler(){
 		showNumList.innerHTML=result;
 		inputNum.value="";
 	}
+	inputNum.focus();
 }
 
 /**
@@ -74,8 +83,9 @@ function popLeftHandler(){
 		alert("使用左侧出操作移除的元素是："+result);
 	}
 	else{
-		alert("队列中还没有元素！");
+		alert("队列中没有元素！");
 	}
+	inputNum.focus();
 }
 
 /**
@@ -89,8 +99,9 @@ function popRightHandler(){
 		alert("使用右侧出操作移除的元素是："+result);
 	}
 	else{
-		alert("队列中还没有元素！");
+		alert("队列中没有元素！");
 	}
+	inputNum.focus();
 }
 
 function init(){
