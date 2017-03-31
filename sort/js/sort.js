@@ -1,3 +1,6 @@
+/**
+* Created by xiaojia on 2017/3/31.
+*/
 /*数组测试平台类*/
 function CArray(numElements){
 	this.dataStore = [];//存储待排序的数据
