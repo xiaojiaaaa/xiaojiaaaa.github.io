@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>数组排序测试</title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript" src="sort.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var a=new Array();
+			var aProcess=new Array();
+			a=getTenDataArr();
+			var oriArr=document.getElementById("originArr");
+			var sortArr=document.getElementById("sortArr");
+			var sortType=document.getElementById("sortType");
+			var sortProcess=document.getElementById("sortProcess");
+
+			var btn_resetArr=document.getElementById("btn_ResetArr");
+			var btn_bubbleSort=document.getElementById("btn_bubbleSort");
+			var btn_selectSort=document.getElementById("btn_selectSort");
+			var btn_insertSort=document.getElementById("btn_insertSort");
+			var btn_shellSort=document.getElementById("btn_shellSort");
+			var btn_quickSort=document.getElementById("btn_quickSort");
+			var gaps=[5,3,1];
+
+			oriArr.value=a;
+
+			function setAfterValue(){
+				sortArr.value=a;
+				sortProcess.innerHTML=aProcess.join("");
+			}
+			//清楚排序后的记录数组
+			function ClearAfterArr(){
+				a=oriArr.value.toString().split(',');
+				aProcess=[];
+				sortProcess.innerHTML="";
+			}
+			//重置数组的值
+			btn_resetArr.onclick=function(){
+				a=getTenDataArr();
+				oriArr.value=a;
+				sortArr.value="";
+				sortType.innerHTML="";
+				aProcess=[];
+				sortProcess.innerHTML="";
+			}
+			//冒泡排序
+			btn_bubbleSort.onclick=function(){
+				ClearAfterArr();
+				bubbleSort(a,aProcess);
+				sortType.innerHTML="冒泡排序";
+				setAfterValue();
+			}
+			//选择排序
+			btn_selectSort.onclick=function(){
+				ClearAfterArr();
+				selectionSort(a,aProcess);
+				sortType.innerHTML="选择排序";
+				setAfterValue();
+			}
+
+			//插入排序
+			btn_insertSort.onclick=function(){
+				ClearAfterArr();
+				insertionSort(a,aProcess);
+				sortType.innerHTML="插入排序";
+				setAfterValue();
+			}
+
+			//希尔排序
+			btn_shellSort.onclick=function(){
+				ClearAfterArr();
+				shellSort(a,gaps,aProcess);
+				sortType.innerHTML="希尔排序;间隔序列为[5,3,1]";
+				setAfterValue();
+			}
+			//快速排序
+			btn_quickSort.onclick=function(){
+				ClearAfterArr();
+				var arrq=new Array();
+				arrq=quickSort(a,aProcess);
+				sortArr.value=arrq;
+				sortType.innerHTML="快速排序";
+				sortProcess.innerHTML=aProcess.join("");
+			}
+
+			
+		}
+	</script>
+</head>
+<body style="padding-left:100px; padding-top:50px;">
+	<span style="color:red;">
+		注意：希尔排序和快速排序没有将数组元素转换为整型；<br>
+		可能会出现'13'排列在'2'前面的情况；这不是错误；</span>
+	<br>
+	<br>
+	这是原数组：<input type="text" id="originArr" style="width:200px;">
+	<br>
+	<br>
+	<input id="btn_ResetArr" type="button" value="重新生成数组">
+	<br>
+	<br>
+	排序方法：<span id="sortType" style="color:red;"></span>
+	<br>
+	<br>
+	排序后数组：<input type="text" id="sortArr" style="width:200px;">
+	<br>
+	<br>
+	排序过程：<br>
+	<span id="sortProcess" style="color:red;"></span>
+	<br>
+	<br>
+	<input id="btn_bubbleSort" type="button" value="冒泡排序">
+	<input id="btn_selectSort" type="button" value="选择排序">
+	<input id="btn_insertSort" type="button" value="插入排序">
+	<input id="btn_shellSort" type="button" value="希尔排序">
+	<input id="btn_quickSort" type="button" value="快速排序">
+</body>
+</html>
