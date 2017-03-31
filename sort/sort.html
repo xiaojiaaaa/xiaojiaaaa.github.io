@@ -1,0 +1,248 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>任务五：基础JavaScript练习（二）--实现排序算法</title>
+<style type="text/css">
+	
+	.wrap{
+		width:95%;
+		margin:20px auto;
+	}
+	.inputData{
+		line-height: 35px;
+	}
+	#sortProcess{
+		display: flex;
+		align-items: flex-end;
+	}
+	#sortProcess li{
+		list-style-type: none;
+		float:left;
+		color:#fff;
+		background-color: red;
+		width:35px;
+		margin:0 5px;
+		text-align: center;
+	}
+</style>
+<script type="text/javascript" src="js/sort.js"></script>
+<script type="text/javascript">
+function changeNum(){
+	var nums=document.getElementById("arrNum");
+	var sourceArr=document.getElementById("sourceArr");
+	nums.value=sourceArr.value.split(",").length;
+}
+//初始化
+function setDataArr(){
+	
+	var nums=document.getElementById("arrNum");
+	var sourceArr=document.getElementById("sourceArr");
+	 sourceArr.disabled = false;
+	if(isNaN(nums.value)||nums.value>60||nums.value<0){
+		alert("元素个数请输入小于60的数值");
+		sourceArr.innerText="";
+		return;
+	}
+	var myNums=new CArray(parseInt(nums.value));
+	myNums.numElement=parseInt(nums.value);
+	myNums.setData();
+
+	sourceArr.innerText=myNums.dataStore;
+
+	createNode(myNums.dataStore);
+	
+}
+//创建节点
+function createNode(resultArr){
+
+	var sortProcess=document.getElementById("sortProcess");
+	sortProcess.innerHTML="";
+	for(var i=0;i<resultArr.length;i++){
+		var node=document.createElement("li");
+		node.innerText=resultArr[i];
+		node.style.height=resultArr[i]+"px";
+		sortProcess.appendChild(node);
+	}
+}
+//冒泡排序
+function bubbleHandler(){
+	var sourceArr=document.getElementById("sourceArr");
+	var sortType=document.getElementById("sortType");
+	sortType.innerText="冒泡排序";
+	var bubbleDatas=sourceArr.value.split(",");
+	sourceArr.disabled = true;
+	//console.log(bubbleDatas);
+	var desArr=document.getElementById("desArr");
+	var showArr=document.getElementById("showArr");
+	var result=bubbleSort(bubbleDatas);
+	//console.log(result);
+	var resultArr=result.splice(0,bubbleDatas.length);;
+	showArr.value=result;
+	desArr.innerText=resultArr;
+	//console.log(result);
+	createNode(resultArr);
+}
+//选择排序
+function selectionHandler(){
+	var sourceArr=document.getElementById("sourceArr");
+	var selectionDatas=sourceArr.value.split(",");
+	sourceArr.disabled = true;
+
+	var sortType=document.getElementById("sortType");
+	sortType.innerText="选择排序";
+	
+	//console.log(selectionDatas);
+	var desArr=document.getElementById("desArr");
+	var showArr=document.getElementById("showArr");
+	var result=selectionSort(selectionDatas);
+	//console.log(result);
+	var resultArr=result.splice(0,selectionDatas.length);;
+	showArr.value=result;
+	desArr.innerText=resultArr;
+	//console.log(result);
+	createNode(resultArr);
+}
+//插入排序
+function insertionHandler(){
+	var sourceArr=document.getElementById("sourceArr");
+	var insertionDatas=sourceArr.value.split(",");
+	sourceArr.disabled = true;
+
+	var sortType=document.getElementById("sortType");
+	sortType.innerText="插入排序";
+	
+	//console.log(selectionDatas);
+	var desArr=document.getElementById("desArr");
+	var showArr=document.getElementById("showArr");
+	var result=insertionSort(insertionDatas);
+	//console.log(result);
+	var resultArr=result.splice(0,insertionDatas.length);;
+	showArr.value=result;
+	desArr.innerText=resultArr;
+	//console.log(result);
+	createNode(resultArr);
+}
+//希尔排序
+function shellHandler(){	
+	var sourceArr=document.getElementById("sourceArr");
+	var shellDatas=sourceArr.value.split(",");
+	sourceArr.disabled = true;
+
+	var sortType=document.getElementById("sortType");
+	sortType.innerText="希尔排序";
+	
+	//console.log(shellDatas);
+	var desArr=document.getElementById("desArr");
+	var showArr=document.getElementById("showArr");
+	var result=shellSortDynamicGas(shellDatas);
+	//console.log(result);
+	var resultArr=result.splice(0,shellDatas.length);;
+	showArr.value=result;
+	desArr.innerText=resultArr;
+	//console.log(result);
+	createNode(resultArr);
+}
+//归并排序
+function mergeHandler(){	
+	processMergeArr=[];
+	var sourceArr=document.getElementById("sourceArr");
+	var mergeDatas=sourceArr.value.split(",");
+	var modelMergeSort =[];
+	for(var i=0;i<mergeDatas.length;i++){
+		modelMergeSort.push(mergeDatas[i]);
+	}
+	sourceArr.disabled = true;
+
+	var sortType=document.getElementById("sortType");
+	sortType.innerText="归并排序";
+	
+	//console.log(mergeDatas);
+	var desArr=document.getElementById("desArr");
+	var showArr=document.getElementById("showArr");
+	var result=mergeSort(mergeDatas,0,modelMergeSort);
+	
+	var resultArr=result.splice(0,mergeDatas.length);;
+	showArr.value=resultArr.concat(processMergeArr);
+	desArr.innerText=resultArr;
+	//console.log(result);
+	createNode(resultArr);
+}
+//快速排序
+function qHandler(){
+	processQArr=[];
+	var sourceArr=document.getElementById("sourceArr");
+	var qDatas=sourceArr.value.split(",");
+	var modelqSort =[];
+	for(var i=0;i<qDatas.length;i++){
+		modelqSort.push(qDatas[i]);
+	}
+	sourceArr.disabled = true;
+
+	var sortType=document.getElementById("sortType");
+	sortType.innerText="快速排序";
+	
+	//console.log(qDatas);
+	var desArr=document.getElementById("desArr");
+	var showArr=document.getElementById("showArr");
+	var result=qSort(qDatas,0,modelqSort);
+	
+	var resultArr=result.splice(0,qDatas.length);;
+	showArr.value=resultArr.concat(processQArr);
+	desArr.innerText=resultArr;
+	//console.log(result);
+	createNode(resultArr);
+
+}
+//演示过程
+function showProcess(){
+ 	var showArr=document.getElementById("showArr");
+	var sourceArr=document.getElementById("sourceArr");
+ 	var datas=sourceArr.value.split(","); 	
+ 	//console.log(showArr.value+"aa");
+ 	var proArrmy=[];
+ 	for(var j=0;j<showArr.value.length;j++){
+ 		proArrmy.push(showArr.value[j]);
+ 	}
+ 	var i=0;
+ 	var interval= setInterval(function(){
+ 		if(proArrmy.length<=0){
+			clearInterval(interval);
+			 alert("排序结束"); 
+			return;
+		}
+		//console.log(proArrmy);
+        createNode(proArrmy.splice(0,datas.length));
+        i++;
+    }, 2000);  
+   
+ } 
+
+</script>
+</head>
+<body>
+<div class="wrap">
+<h1>实现排序算法可视化演示</h1>
+<hr style="color:#ccc;margin:15px 0px;">
+<div class="inputData">
+	数组元素个数：<input type="text" name="arrNum" id="arrNum" style="margin-bottom: 5px;" placeholder="数组元素个数，数值" ><br>
+	待 排序 数组：<textarea rows="5" cols="50" id="sourceArr" style="vertical-align: middle;" placeholder="输入数组元素，请以‘，’分隔" onchange="changeNum()"></textarea>	<button id="btn_dataArr" onclick="setDataArr()">重新生成随机数组</button><br>
+	<hr style="color:#ccc;margin:15px 0px;">
+	<button id="btn_bubbleSort" onclick="bubbleHandler()">冒泡排序</button>
+	<button id="btn_selectionSort" onclick="selectionHandler()">选择排序</button>
+	<button id="btn_insertionSort" onclick="insertionHandler()">插入排序</button>
+	<button id="btn_shellSort" onclick="shellHandler()">希尔排序</button>
+	<button id="btn_mergeSort" onclick="mergeHandler()">归并排序</button>
+	<button id="btn_qSort" onclick="qHandler()">快速排序</button><br>
+	排序算法：<span id="sortType" style="color:red"></span><br>
+	排序后的数组：<textarea rows="5" cols="50" id="desArr" style="vertical-align: middle;" disabled="false"></textarea><br>
+	排序过程演示：<span id="sortProcess">
+					<ul>
+							
+					</ul>
+				  </span><br>
+	<div style="display: none" id="showArr"></div> 
+	<button id="btnShowProcess" onclick="showProcess()">演示过程</button>
+</div>
+</div>
+</body>
+</html>
