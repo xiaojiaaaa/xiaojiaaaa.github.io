@@ -15,109 +15,132 @@
 		margin-right: 5px;
 	}
 </style>
+<link href="css/task5.css" rel="stylesheet">
 </head>
 <body>
-<input type="text" id="input_num"/> 
-<button id="push_left">左侧入</button>
-<button id="push_right">右侧入</button>
-&nbsp;&nbsp;&nbsp;
-<button id="pop_left">左侧出</button>
-<button id="pop_right">右侧出</button>
-<ul id="showlist_num"></ul>
-<script type="text/javascript">
-var inputNum=document.getElementById("input_num");
-var showNumList=document.getElementById("showlist_num");
+<div class="wrap">
+	<input type="text" id="input_num"/> 
+	<button id="push_left">左侧入</button>
+	<button id="push_right">右侧入</button>
+	&nbsp;&nbsp;&nbsp;
+	<button id="pop_left">左侧出</button>
+	<button id="pop_right">右侧出</button>
+	<ul id="showlist_num"></ul>
+	<script type="text/javascript">
+	var inputNum=document.getElementById("input_num");
+	var showNumList=document.getElementById("showlist_num");
 
-/**
- * pushLeftHandler
- * 左侧入点击事件
- */
-function pushLeftHandler(){
-	if(inputNum.value==""){
-		// inputNum.focus();
-		alert("请输入值");
+	/**
+	 * pushLeftHandler
+	 * 左侧入点击事件
+	 */
+	function pushLeftHandler(){
+		if(inputNum.value==""){
+			// inputNum.focus();
+			alert("请输入值");
+		}
+		else if(isNaN(inputNum.value)){
+			
+			alert("请输入数字");	
+		}
+		else{
+			var result = showNumList.innerHTML;
+			var result1 ="<li>"+inputNum.value+"</li>"
+			showNumList.innerHTML=result1+result;
+			inputNum.value="";
+		}
+		inputNum.focus();
 	}
-	else if(isNaN(inputNum.value)){
-		
-		alert("请输入数字");	
-	}
-	else{
-		var result = showNumList.innerHTML;
-		var result1 ="<li>"+inputNum.value+"</li>"
-		showNumList.innerHTML=result1+result;
-		inputNum.value="";
-	}
-	inputNum.focus();
-}
 
-/**
- * pushRightHandler
- * 右侧入点击事件
- */
-function pushRightHandler(){
-	if(inputNum.value==""){
-		
-		alert("请输入值");
+	/**
+	 * pushRightHandler
+	 * 右侧入点击事件
+	 */
+	function pushRightHandler(){
+		if(inputNum.value==""){
+			
+			alert("请输入值");
+		}
+		else if(isNaN(inputNum.value)){
+			
+			alert("请输入数字");	
+		}
+		else{
+			var result = showNumList.innerHTML;
+			result+="<li>"+inputNum.value+"</li>"
+			showNumList.innerHTML=result;
+			inputNum.value="";
+		}
+		inputNum.focus();
 	}
-	else if(isNaN(inputNum.value)){
-		
-		alert("请输入数字");	
-	}
-	else{
-		var result = showNumList.innerHTML;
-		result+="<li>"+inputNum.value+"</li>"
-		showNumList.innerHTML=result;
-		inputNum.value="";
-	}
-	inputNum.focus();
-}
 
-/**
- * popLeftHandler
- * 左侧出点击事件
- */
-function popLeftHandler(){
-	// console.log(showNumList.firstChild);
-	if(showNumList.innerHTML!=""||showNumList.firstChild!=null){
-		var result = showNumList.firstChild.innerText;
-		showNumList.removeChild(showNumList.firstChild);
-		alert("使用左侧出操作移除的元素是："+result);
+	/**
+	 * popLeftHandler
+	 * 左侧出点击事件
+	 */
+	function popLeftHandler(){
+		// console.log(showNumList.firstChild);
+		if(showNumList.innerHTML!=""||showNumList.firstChild!=null){
+			var result = showNumList.firstChild.innerText;
+			showNumList.removeChild(showNumList.firstChild);
+			alert("使用左侧出操作移除的元素是："+result);
+		}
+		else{
+			alert("队列中没有元素！");
+		}
+		inputNum.focus();
 	}
-	else{
-		alert("队列中没有元素！");
-	}
-	inputNum.focus();
-}
 
-/**
- * popRightHandler
- * 右侧出点击事件
- */
-function popRightHandler(){
-	if(showNumList.innerHTML!=""||showNumList.firstChild!=null){
-		var result = showNumList.lastChild.innerText;
-		showNumList.removeChild(showNumList.lastChild);
-		alert("使用右侧出操作移除的元素是："+result);
+	/**
+	 * popRightHandler
+	 * 右侧出点击事件
+	 */
+	function popRightHandler(){
+		if(showNumList.innerHTML!=""||showNumList.firstChild!=null){
+			var result = showNumList.lastChild.innerText;
+			showNumList.removeChild(showNumList.lastChild);
+			alert("使用右侧出操作移除的元素是："+result);
+		}
+		else{
+			alert("队列中没有元素！");
+		}
+		inputNum.focus();
 	}
-	else{
-		alert("队列中没有元素！");
+
+	function init(){
+		//分别给各个按钮绑定点击事件
+		var pushLeft=document.getElementById("push_left");
+		pushLeft.addEventListener("click",pushLeftHandler);
+		var pushRight=document.getElementById("push_right");
+		pushRight.addEventListener("click",pushRightHandler);
+		var popLeft=document.getElementById("pop_left");
+		popLeft.addEventListener("click",popLeftHandler);
+		var popRight=document.getElementById("pop_right");
+		popRight.addEventListener("click",popRightHandler);
+		var data_content = document.getElementById('showlist_num');
+		data_content.addEventListener("click",function(e){
+	        if(e.target && e.target.nodeName.toUpperCase() == "LI") {
+	            var  index;
+	            var datalist = this.children;
+	            for(var i = 0; i < datalist.length; i++){
+	                if(datalist[i] == e.target){
+	                    index = i;
+	                    break;
+	                }
+	            }
+	            if(index >= 0){
+	                //移除HTML代码
+	                data_content.removeChild(e.target);
+	                alert('移除元素内数值为 ' + e.target.innerText);
+	            }else{
+	                alert('移除元素失败');
+	            }
+	        }
+	    });
 	}
-	inputNum.focus();
-}
+	init();
 
-function init(){
-	//分别给各个按钮绑定点击事件
-	var pushLeft=document.getElementById("push_left");
-	pushLeft.addEventListener("click",pushLeftHandler);
-	var pushRight=document.getElementById("push_right");
-	pushRight.addEventListener("click",pushRightHandler);
-	var popLeft=document.getElementById("pop_left");
-	popLeft.addEventListener("click",popLeftHandler);
-	var popRight=document.getElementById("pop_right");
-	popRight.addEventListener("click",popRightHandler);
-}
-init();
-
-</script>
+	</script>
+</div>
 </body>
 </html>
