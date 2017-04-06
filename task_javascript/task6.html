@@ -1,0 +1,208 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>任务六：基础JavaScript练习（三）</title>
+<style type="text/css">
+
+    .text{
+		color:red;
+		text-align: left;
+		margin-left: 10%;
+		width:80%;
+		line-height: 22px;
+		font-size:18px;
+		margin-bottom: 15px;
+	}
+	#inputValue{
+		width:50%;
+		vertical-align: middle;
+	}
+	.inputTxt,.searchDiv{
+		margin-left:10%;
+		width:100%;
+		text-align: left;
+	}
+	.searchDiv #txtSearch{
+		width:50%;
+		height: 35px;
+		margin-top: 10px;
+	}
+</style>
+<link href="css/task5.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrap">
+	<div class="text">
+		
+<h1>任务描述</h1>
+1.基于任务四进行升级<br>
+2.将新元素输入框从input改为textarea<br>
+3.允许一次批量输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔<br>
+4.增加一个查询文本输入框，和一个查询按钮，当点击查询时，将查询词在各个元素内容中做模糊匹配，将匹配到的内容进行特殊标识，如文字颜色等。举例，内容中有abcd，查询词为ab或bc，则该内容需要标识<br>
+		
+	</div>
+	<!-- <input type="text" id="input_num"/>  -->
+	<div class="inputTxt">
+		<textarea rows="5" id="inputValue" placeholder="输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔"></textarea>
+		<button id="push_left">左侧入</button>
+		<button id="push_right">右侧入</button>
+		&nbsp;&nbsp;&nbsp;
+		<button id="pop_left">左侧出</button>
+		<button id="pop_right">右侧出</button>
+	</div>
+	<div class="searchDiv">
+		<input type="text" id="txtSearch" placeholder="请输入需查询的内容">
+		<button id="btnSearch">查询</button>
+	</div>
+	<ul id="showlist_num" style="height: 50px; "></ul>
+	<script type="text/javascript">
+	var inputNum=document.getElementById("inputValue");
+	var showNumList=document.getElementById("showlist_num");
+	var dataArr=[];
+	/**
+	 * pushLeftHandler
+	 * 左侧入点击事件
+	 */
+	function pushLeftHandler(){
+		if(inputNum.value==""){
+			// inputNum.focus();
+			alert("请输入值");
+		}
+		else{
+			var result = showNumList.innerHTML;
+			var inputArr=inputNum.value.split(/[\s\n\r\，\,\、]/);
+			var result1 ="";
+			for(var i=0;i<inputArr.length;i++){
+				result1+="<li>"+inputArr[i]+"</li>";
+
+			}		
+			for(var j=inputArr.length-1;j>=0;j--){
+				dataArr.unshift(inputArr[j]);
+			}	
+
+			showNumList.innerHTML=result1+result;
+			
+			//inputNum.value="";
+		}
+		inputNum.focus();
+	}
+
+	/**
+	 * pushRightHandler
+	 * 右侧入点击事件
+	 */
+	function pushRightHandler(){
+		if(inputNum.value==""){
+			
+			alert("请输入值");
+		}
+		else{
+			var result = showNumList.innerHTML;
+			var inputArr=inputNum.value.split(/[\s\n\r\，\,\、]/);			
+			for(var i=0;i<inputArr.length;i++){
+				result+="<li>"+inputArr[i]+"</li>"
+				dataArr.push(inputArr[i]);
+			}			
+			showNumList.innerHTML=result;
+			
+		}
+		inputNum.focus();
+	}
+
+	/**
+	 * popLeftHandler
+	 * 左侧出点击事件
+	 */
+	function popLeftHandler(){
+		// console.log(showNumList.firstChild);
+		if(showNumList.innerHTML!=""||showNumList.firstChild!=null){
+			var result = showNumList.firstChild.innerText;
+			showNumList.removeChild(showNumList.firstChild);
+			dataArr.shift();
+			alert("使用左侧出操作移除的元素是："+result);
+		}
+		else{
+			alert("队列中没有元素！");
+		}
+		inputNum.focus();
+	}
+
+	/**
+	 * popRightHandler
+	 * 右侧出点击事件
+	 */
+	function popRightHandler(){
+		if(showNumList.innerHTML!=""||showNumList.firstChild!=null){
+			var result = showNumList.lastChild.innerText;
+			showNumList.removeChild(showNumList.lastChild);
+			dataArr.pop();
+			alert("使用右侧出操作移除的元素是："+result);
+		}
+		else{
+			alert("队列中没有元素！");
+		}
+		inputNum.focus();
+	}
+	/**
+	 * searchHandler
+	 * 模糊查询功能
+	 */
+	function searchHandler(){
+		var searchValue=document.getElementById("txtSearch");
+		if(searchValue.value==""){
+			alert("请输入需查询的内容");
+		}
+		else{
+			var liList = showNumList.children;
+			
+			for(var i=0;i<liList.length;i++){
+				if(liList[i].innerText.indexOf(searchValue.value)>-1){
+					liList[i].style.backgroundColor = "#aaa";
+					console.log(i);
+				}
+				else{
+					liList[i].style.backgroundColor ="red";
+				}
+			}
+		}
+	}
+
+	function init(){
+		//分别给各个按钮绑定点击事件
+		var pushLeft=document.getElementById("push_left");
+		pushLeft.addEventListener("click",pushLeftHandler);
+		var pushRight=document.getElementById("push_right");
+		pushRight.addEventListener("click",pushRightHandler);
+		var popLeft=document.getElementById("pop_left");
+		popLeft.addEventListener("click",popLeftHandler);
+		var popRight=document.getElementById("pop_right");
+		popRight.addEventListener("click",popRightHandler);
+		var data_content = document.getElementById('showlist_num');
+		data_content.addEventListener("click",function(e){
+	        if(e.target && e.target.nodeName.toUpperCase() == "LI") {
+	            var  index;
+	            var datalist = this.children;
+	            for(var i = 0; i < datalist.length; i++){
+	                if(datalist[i] == e.target){
+	                    index = i;
+	                    break;
+	                }
+	            }
+	            if(index >= 0){
+	                //移除HTML代码
+	                data_content.removeChild(e.target);
+	                alert('移除元素内数值为 ' + e.target.innerText);
+	            }else{
+	                alert('移除元素失败');
+	            }
+	        }
+	    });
+	    var btnSearch=document.getElementById("btnSearch");
+	    btnSearch.addEventListener("click",searchHandler);
+	}
+	init();
+
+	</script>
+</div>
+</body>
+</html>
