@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>任务七：JavaScript和树（一）</title>
+<style type="text/css">
+	.wrap{
+		width:90%;
+		margin:200px auto;
+		text-align: center;
+	}
+	.wrap div{
+		border:1px solid #000;	
+		display: flex;
+		justify-content: space-around;
+		align-items: center;	
+		background-color:#fff;
+	}
+	.layer_one{
+		height:500px;
+	}
+	.layer_two{		
+		height:400px;
+		width:45%;
+		float:left;
+	}
+	.layer_three{
+		height: 300px;
+		width:40%;
+		float:left;
+	}
+	.layer_four{
+		height: 200px;
+		width:40%;
+		float:left;
+	}
+	.wrap .btn_group{
+		border:none;
+		margin-top: 20px;
+	}
+	.btn_group button{
+		padding: 6px 12px;
+	    font-size: 14px;
+	    font-weight: 400;
+	    line-height: 1.42857143;
+	    text-align: center;
+	    -ms-touch-action: manipulation;
+	    touch-action: manipulation;
+	    cursor: pointer;
+	    background-image: none;
+	    border: 1px solid transparent;
+	    border-radius: 4px;
+	    color: #fff;
+	    background-color: #337ab7;
+	    border-color: #2e6da4;
+	}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="layer_one">
+		<div class="layer_two">
+			<div class="layer_three">
+				<div class="layer_four"></div>
+				<div class="layer_four"></div>
+			</div>
+			<div class="layer_three">				
+				<div class="layer_four"></div>
+				<div class="layer_four"></div>
+			</div>
+		</div>
+		<div class="layer_two">
+			<div class="layer_three">
+				<div class="layer_four"></div>
+				<div class="layer_four"></div>
+			</div>
+			<div class="layer_three">				
+				<div class="layer_four"></div>
+				<div class="layer_four"></div>
+			</div>
+		</div>
+	</div>
+	<div class="btn_group">
+		<button id="inOrder">中序</button>
+		<button id="preOrder">先序</button>
+		<button id="postOrder">后序</button>
+	</div>
+</div>
+<script type="text/javascript"></script>
+<script type="text/javascript" src="js/task7.js"></script>>
+</body>
+</html>
