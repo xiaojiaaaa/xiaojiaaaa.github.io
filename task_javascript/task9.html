@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>任务九：JavaScript和树（三）</title>
+<style type="text/css">
+	.wrap .text{
+		color:red;
+		text-align: left;	
+		line-height: 22px;
+		font-size:18px;
+		margin-bottom: 15px;
+	}
+	.text h1{
+		line-height: 35px;
+	}
+</style>
+<link href="css/task8.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="wrap" id="wrap">
+	<div class="text">
+			
+	<h1>任务描述</h1>
+	1.基于任务八，添加节点的选择、增加与删除的功能<br>
+	2.点击某个节点元素，则该节点元素呈现一个特殊被选中的样式<br>
+	3.增加一个删除按钮，当选中某个节点元素后，点击删除按钮，则将该节点及其所有子节点删除掉<br>
+	4.增加一个输入框及一个“添加”按钮当选中某个节点元素后，点击增加按钮，则在该节点下增加一个子节点，节点内容为输入框中内容，插入在其子节点的最后一个位置<br>
+		
+	</div>
+	<div class="layer_1 tree" id="layer_1">1
+		<div class="layer_2 tree">2
+			<div class="layer_5 tree">5
+				<div class="layer_10 tree">10</div>
+				<div class="layer_11 tree">11</div>
+				<div class="layer_12 tree">12</div>
+				<div class="layer_13 tree">13</div>
+			</div>
+			<div class="layer_6 tree">6
+			</div>
+			<div class="layer_7 tree">7				
+				<div class="layer_14 tree">14</div>
+				<div class="layer_15 tree">15</div>
+			</div>
+		</div>
+		<div class="layer_3 tree">3
+			<div class="layer_8 tree">8
+				<div class="layer_16 tree">16</div>
+				<div class="layer_17 tree">17</div>
+				<div class="layer_18 tree">18</div>
+			</div>
+			<div class="layer_9 tree">9				
+				<div class="layer_19 tree">19
+					<div class="layer_21 tree">21</div>
+				</div>
+				<div class="layer_20 tree">20</div>
+			</div>
+		</div>
+		<div class="layer_4 tree">4</div>
+	</div>	
+</div>
+<div class="btn_group">
+	<input type="text" id="txtSearch" placeholder="请输入待查询内容">
+	<button id="preOrder">先序查询</button>
+	<button id="postOrder">后序查询</button>
+	<button id="btnDelete">删除</button>
+</div>
+<div class="btn_group">
+	<input type="text" id="txtAddValue" placeholder="请输入待插入的内容">	
+	<button id="btnAdd">增加</button>
+</div>
+<script type="text/javascript"></script>
+<script type="text/javascript" src="js/task9.js"></script>
+</body>
+</html>
