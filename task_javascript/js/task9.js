@@ -134,6 +134,8 @@ function addHandler(e){
 function deleteHandler(){
 	if(parentNode){
 		parentNode.parentNode.removeChild(parentNode);
+		parentNode=null;
+		txtSearch.value="";
 	}
 	else{
 		alert("请先选中待删除的节点！");
