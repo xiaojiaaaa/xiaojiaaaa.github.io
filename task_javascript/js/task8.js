@@ -1,10 +1,14 @@
+/*js部分任务八*/
 var arr=[];
 var rootNode=document.getElementsByClassName("layer_1")[0];//获取根节点
 var searchText=document.getElementById("txtSearch");
 var flag;
 var elemtsNum;
+var k;//为了记数，查看是否有此内容
+
 /*先序遍历*/
 function preOrderHandler(){
+	k=0;
 	arr=[];
 	preOrder(rootNode);
 	spliceArr();
@@ -23,6 +27,7 @@ function preOrder(node){
 
 /*后序遍历*/
 function postOrderHandler(node){
+	k=0;
 	arr=[];
 	postOrder(rootNode);
 	spliceArr();
@@ -42,6 +47,7 @@ function postOrder(node){
 /*截取数组*/
 function spliceArr(){	
 	elemtsNum=arr.length
+	console.log(elemtsNum);
 	var searchValue = searchText.value;
 	var index=elemtsNum;
 	flag=false;//查看是否有待查询内容
@@ -53,9 +59,9 @@ function spliceArr(){
 	}
 	arr.splice(index+1,arr.length-index);	
 }
+
 /*显示*/
 var current;
-var k=0;//为了记数，查看是否有此内容
 function showOut(){	
 	current=arr.shift();
 	if(current){
@@ -75,6 +81,7 @@ function showOut(){
 		alert("找到元素"+(current.innerText.split("\n"))[0]);
 		btnAbled();
 	}
+
 	if(k==elemtsNum&&(!flag)&&(searchText.value!="")){
 		alert("没有此内容！");
 		btnAbled();
@@ -84,6 +91,7 @@ function showOut(){
 		btnAbled();
 	}
 }
+
 function btnAbled(){
 	var preOrder=document.getElementById("preOrder");
 	var postOrder=document.getElementById("postOrder");
