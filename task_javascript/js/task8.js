@@ -1,12 +1,14 @@
 var arr=[];
 var rootNode=document.getElementsByClassName("layer_1")[0];//获取根节点
 var searchText=document.getElementById("txtSearch");
+var flag;
+var elemtsNum;
 /*先序遍历*/
 function preOrderHandler(){
 	arr=[];
 	preOrder(rootNode);
 	spliceArr();
-	showOut();
+	showOut();	
 }
 function preOrder(node){
 	if(node!=null){		
@@ -39,33 +41,60 @@ function postOrder(node){
 
 /*截取数组*/
 function spliceArr(){	
+	elemtsNum=arr.length
 	var searchValue = searchText.value;
-	var index=arr.length;
+	var index=elemtsNum;
+	flag=false;//查看是否有待查询内容
 	for(var i=0;i<arr.length;i++){
 		if((arr[i].innerText.split("\n"))[0]==searchValue){
 			index=i;
+			flag=true;
 		}
 	}
 	arr.splice(index+1,arr.length-index);	
 }
 /*显示*/
 var current;
-function showOut(){
+var k=0;//为了记数，查看是否有此内容
+function showOut(){	
 	current=arr.shift();
 	if(current){
+		btnDisabled();
 		current.style.backgroundColor="blue";
 		current.style.color="#fff";
-		setTimeout(function(){
+		var id=setTimeout(function(){
 			current.style.backgroundColor="#fff";
-			current.style.color="#000";
+			current.style.color="#000";	
+			k++;
 			showOut();
 		},500);
 	}
-	if((current.innerText.split("\n"))[0]==searchText.value){
+	if(current&&(current.innerText.split("\n"))[0]==searchText.value){
 		current.style.backgroundColor="red";
 		current.style.color="#fff";	
-		alert("找到元素"+(current.innerText.split("\n"))[0]);	
+		alert("找到元素"+(current.innerText.split("\n"))[0]);
+		btnAbled();
 	}
+	if(k==elemtsNum&&(!flag)&&(searchText.value!="")){
+		alert("没有此内容！");
+		btnAbled();
+	}
+	else if(k==elemtsNum&&searchText.value==""){
+		alert("遍历结束！");
+		btnAbled();
+	}
+}
+function btnAbled(){
+	var preOrder=document.getElementById("preOrder");
+	var postOrder=document.getElementById("postOrder");
+	preOrder.disabled=false;
+	postOrder.disabled=false;
+}
+function btnDisabled(){
+	var preOrder=document.getElementById("preOrder");
+	var postOrder=document.getElementById("postOrder");
+	preOrder.disabled=true;
+	postOrder.disabled=true;
 }
 
 function init(){
