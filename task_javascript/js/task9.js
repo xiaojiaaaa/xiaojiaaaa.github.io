@@ -92,14 +92,22 @@ function showOut(){
 function btnAbled(){
 	var preOrder=document.getElementById("preOrder");
 	var postOrder=document.getElementById("postOrder");
+	var btnAdd=document.getElementById("btnAdd");
+	var btnDelete=document.getElementById("btnDelete");
 	preOrder.disabled=false;
 	postOrder.disabled=false;
+	btnAdd.disabled=false;
+	btnDelete.disabled=false;
 }
 function btnDisabled(){
 	var preOrder=document.getElementById("preOrder");
 	var postOrder=document.getElementById("postOrder");
+	var btnAdd=document.getElementById("btnAdd");
+	var btnDelete=document.getElementById("btnDelete");
 	preOrder.disabled=true;
 	postOrder.disabled=true;
+	btnAdd.disabled=true;
+	btnDelete.disabled=true;
 }
 
 /*增加子节点*/
