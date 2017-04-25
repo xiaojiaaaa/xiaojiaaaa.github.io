@@ -1,0 +1,55 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+	background-color:black;
+}
+.box{
+	position: relative;
+	width:600px;
+	margin:200px auto;
+}
+/*文字部分样式*/
+.text{
+	font-family:"华文楷体";
+	position:absolute;
+	z-index:1;
+	top:40px;
+	font-size:50px;
+	font-weight:bold;
+	color:black;
+	text-align: center;
+	/*引入动画*/
+	animation:text-shadow 8.0s ease-in-out infinite;
+}
+/*光圈和背景通用样式*/
+.lighting{
+	width:150px;
+	height:150px;
+	border-radius:75px;
+	background:-webkit-radial-gradient(center,#fff 0%,rgba(255,255,255,0.2) 100%);/*径向渐变*/
+	opacity:0.8;
+	position:absolute;
+	box-shadow:0 0 50px #fff;
+	animation:lighting 8.0s infinite;
+}
+.back{
+	z-index:0;
+}
+.front{
+	z-index: 2;
+}
+/*动画设置*/
+@keyframes lighting{
+	0% {left:0;}
+	50% {left:255px;}
+	75% {left:450px;}
+	100% {left:0;}
+}
+@keyframes text-shadow{
+	0% {text-shadow:-9px 1px 5px #000;}
+	50% {text-shadow:9px 1px 5px #000;}
+	
+	100% {text-shadow:-9px 1px 5px #000;}
+}
