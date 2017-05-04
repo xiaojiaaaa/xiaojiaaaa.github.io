@@ -1,0 +1,88 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+.main{
+	width:960px;
+	margin:40px auto;
+}
+.clear{
+	clear:both;
+}
+.title{
+	text-align: center;
+	font-size: 32px;
+	font-weight:bold;
+	margin:20px auto;
+}
+/*立体div样式设置*/
+.box{
+	width:300px;
+	height:300px;
+	/*display:inline-block;*/
+	float:left;
+	margin:20px 10px;
+	transform-style:preserve-3d;
+	transform:rotateX(-10deg);
+	position:relative;
+}
+/*文本部分样式设置*/
+.back{
+	width:100%;
+	height:100%;
+	background-color:#3c3f41;
+	text-align: center;
+	opacity:0.8;
+	transform:rotateY(90deg);/*初始化文字部分位置*/
+	transition:all 0.4s linear;/*动画过渡效果*/
+	position: absolute;
+	top:0;
+	left:0;
+}
+/*图片部分样式设置*/
+.front{
+	width:100%;
+	height:100%;
+	opacity: 0.9;
+	transition:all 0.4s linear;
+	position: absolute;
+}
+.pic1{
+	background: url("../image/01.jpg") no-repeat center center;
+	background-size:100% 100%;
+}
+.pic2{
+	background: url("../image/02.jpg") no-repeat center center;
+	background-size:100% 100%;
+}
+.pic3{
+	background: url("../image/03.jpg") no-repeat center center;
+	background-size:100% 100%;
+}
+/*文本信息具体样式设置*/
+h2{
+	color:#fff;
+	margin-top: 50px;
+	font-weight:lighter;
+}
+span{
+	display:block;
+	height:1px;
+	background-color:#fff;
+	width:220px;
+	margin:20px auto;
+}
+p{
+	color:#fff;
+	font-size: 14px;
+	font-weight:lighter;
+	line-height: 30px;
+	margin:0px 20px;
+}
+/*hover样式设置*/
+.box:hover .front{
+	transform:rotateY(-90deg);
+}
+.box:hover .back{
+	transform:rotateY(0deg);
+}
