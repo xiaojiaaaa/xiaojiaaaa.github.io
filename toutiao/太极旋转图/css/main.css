@@ -1,0 +1,84 @@
+/**
+ * 今日头条 太极图CSS
+ * 20170510
+ */
+/*基本样式*/
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background-color:dimgrey;
+}
+.title{
+	width:100%;
+	color:#fff;
+	font-size:64px;
+	text-align:center;
+	margin:100px auto;
+}
+/*太极主体样式*/
+.taiji{
+	margin:100px auto;
+	position:relative;
+	width:300px;
+	height:300px;
+	border-radius:50%;
+	border:1px solid #ccc;
+	animation:spin 6s linear infinite;
+}
+/*黑白部分*/
+.tj{
+	width:50%;
+	height:100%;
+	position: absolute;
+	top:0;
+}
+.white{
+	background-color:white;
+	left:0;
+	border-radius:100% 0 0 100% /50% 0 0 50%;
+}
+.black{
+	background-color:black;
+	right:0;
+	border-radius: 0 100% 100% 0 /0 50% 50% 0;
+}
+/*圆弧部分*/
+.round{
+	width:50%;
+	height:50%;
+	border-radius:50%;
+	position: absolute;
+}
+.r-w{
+	background-color:white;
+	top:0;
+	left:25%;
+}
+.r-b{
+	background-color:black;
+	bottom:0;
+	left:25%;
+}
+/*黑白圆点样式*/
+.small{
+	width:25%;
+	height:25%;
+	border-radius:50%;
+	position:absolute;
+	left:37.5%;
+}
+.s-b{
+	background-color:black;
+	top:37.5%;
+}
+.s-w{
+	background-color:white;
+	bottom:37.5%;
+}
+/*添加动画*/
+@keyframes spin{
+	0% {transform:rotateZ(0deg);}
+	100%{transform:rotateZ(360deg);}
+}
