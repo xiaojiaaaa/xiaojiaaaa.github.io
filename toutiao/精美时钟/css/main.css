@@ -11,6 +11,13 @@ body,html{
 	height:100%;
 	width:100%;
 }
+.title{
+	text-align: center;
+	color:#fff;
+	font-size: 64px;
+	font-weight:bold;
+    padding-top: 2%;
+}
 /*背景样式*/
 .box{
 	width:100%;
