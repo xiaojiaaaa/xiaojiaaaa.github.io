@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>前端技巧之CSS+简单JS构造精美时钟</title>
+		<meta name="keywords" content="CSS3圆盘时钟动画">
+		<link href="css/main.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript">
+		window.onload=function(){
+			var miao=document.getElementById("miaozhen");
+			var fen=document.getElementById("fenzhen");
+			var shi=document.getElementById("shizhen");
+			var clock=setInterval(function(){
+				var nowDate=new Date();
+				var hour=nowDate.getHours();
+				var minute=nowDate.getMinutes();
+				var second=nowDate.getSeconds();
+
+				var circleHour=hour%12*30;
+				shi.style.transform="rotate("+circleHour+"deg)";
+
+				fen.style.transform="rotate("+minute*6+"deg)";
+
+				miao.style.transform="rotate("+second*6+"deg)";
+			},1000);
+	
+		}
+	</script>		
+	</head>
+	<body>
+		<div class="box">
+			<div class="clock">
+				<div class="dial">
+					<i class="hour hour3">3</i>
+					<i class="hour hour6">6</i>
+					<i class="hour hour9">9</i>
+					<i class="hour hour12">12</i>
+					<div class="shizhen" id="shizhen"></div>
+					<div class="fenzhen" id="fenzhen"></div>
+					<div class="miaozhen" id="miaozhen"></div>
+					<div class="center"></div>
+				</div><!--dial结束-->
+				</div><!--clock结束-->
+		</div><!--box结束-->
+	</body>
+</html>
