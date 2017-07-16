@@ -1,3 +1,8 @@
+---
+author: feixiaoxiaojia
+date: 2017-07-16 18:02
+tags: 腾讯课堂笔试题
+---
 # JS中的计时器方法 #
 
 ----------
